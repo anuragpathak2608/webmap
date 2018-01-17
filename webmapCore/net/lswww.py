@@ -680,19 +680,19 @@ class lswww(object):
 
             self.saveCrawlerData()
             print('')
-            print(_(" Note"))
+            print((" Note"))
             print("========")
-            print(_("This scan has been saved in the file {0}/{1}.xml").format(self.persister.CRAWLER_DATA_DIR,
+            print(("This scan has been saved in the file {0}/{1}.xml").format(self.persister.CRAWLER_DATA_DIR,
                                                                                self.server))
-            print(_("You can use it to perform attacks without scanning again the web site with the \"-k\" parameter"))
+            print(("You can use it to perform attacks without scanning again the web site with the \"-k\" parameter"))
         except KeyboardInterrupt:
             self.saveCrawlerData()
             print('')
-            print(_(" Note"))
+            print((" Note"))
             print("========")
-            print(_("Scan stopped, the data has been saved"
+            print(("Scan stopped, the data has been saved"
                     "in the file {0}/{1}.xml").format(self.persister.CRAWLER_DATA_DIR, self.server))
-            print(_("To continue this scan, you should launch Wapiti with the \"-i\" parameter"))
+            print(("To continue this scan, you should launch Wapiti with the \"-i\" parameter"))
             pass
 
     def verbosity(self, vb):
@@ -702,7 +702,7 @@ class lswww(object):
     def printLinks(self):
         """Print found URLs on standard output"""
         self.browsed_links.sort()
-        sys.stderr.write("\n+ " + _("URLs") + ":\n")
+        sys.stderr.write("\n+ " + ("URLs") + ":\n")
         for link in self.browsed_links:
             print(link)
 
@@ -711,14 +711,14 @@ class lswww(object):
         if self.browsed_forms:
             sys.stderr.write("\n+ "+_("Forms Info") + ":\n")
             for form in self.browsed_forms:
-                print(_("From: {0}").format(form.referer))
-                print(_("To: {0}").format(form))
+                print(("From: {0}").format(form.referer))
+                print(("To: {0}").format(form))
                 print('')
 
     def printUploads(self):
         """Print urls accepting uploads"""
         if self.uploads:
-            sys.stderr.write("\n+ " + _("Upload Scripts") + ":\n")
+            sys.stderr.write("\n+ " + ("Upload Scripts") + ":\n")
             for up in self.uploads:
                 print(up)
 

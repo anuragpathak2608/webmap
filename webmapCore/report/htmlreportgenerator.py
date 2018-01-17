@@ -7,7 +7,7 @@ import sys
 
 class HTMLReportGenerator(JSONReportGenerator):
     """
-    This class generates a Wapiti scan report in HTML format.
+    This class generates a Webmap scan report in HTML format.
     It first generates a JSON report and insert in the HTML template.
     For more information see JSONReportGenerator class
     Then it copies the template structure (which js and css files) in the output directory.
@@ -15,7 +15,7 @@ class HTMLReportGenerator(JSONReportGenerator):
     if hasattr(sys, "frozen"):
         BASE_DIR = os.path.join(os.path.dirname(unicode(sys.executable, sys.getfilesystemencoding())), "data")
     else:
-        BASE_DIR = os.path.dirname(sys.modules['wapitiCore'].__file__)
+        BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))
     REPORT_DIR = "report_template"
     REPORT_JSON_FILE = "vulnerabilities.json"
 

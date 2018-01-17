@@ -551,7 +551,7 @@ class HTTP(object):
         except requests.exceptions.SSLError, msg:
             if not self.sslErrorOccured:
                 self.sslErrorOccured = True
-                print(_("A SSL error occurred during the scan: {0}").format(msg))
+                print(("A SSL error occurred during the scan: {0}").format(msg))
 
         if resp is None:
             return None
